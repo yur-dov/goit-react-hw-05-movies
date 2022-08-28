@@ -1,0 +1,28 @@
+.Container {
+  display: flex;
+  /* width: 100%; */
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #163d1d;
+  border-bottom: 1px solid black;
+}
+.NavLink a {
+  color: aliceblue;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.active {
+  color: #cc0202;
+}
+
+.inactive {
+  color: #eff5ed;
+}
+
+a:hover {
+  color: #da6a3d;
+}

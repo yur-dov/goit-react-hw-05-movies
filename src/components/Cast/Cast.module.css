@@ -1,0 +1,12 @@
+.CastList {
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.ListItems {
+  list-style-type: none;
+  text-align: center;
+}
