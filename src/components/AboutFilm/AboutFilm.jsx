@@ -6,6 +6,7 @@ import {
   useLocation,
   useNavigate,
 } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import api from '../service/serviceApi';
 import css from './AboutFilms.module.css'
 
@@ -15,14 +16,17 @@ const AboutFilm = () => {
     const location = useLocation();
   const navigate = useNavigate();
 
-    useEffect(() => {
-      (() => {
-        movieId &&
-          api.fetchDetailsMovie(movieId).then(data => {
-          console.log(data);
-          setMovie(data);
-        });
-    })();
+  useEffect(() => {
+    (async () => {
+      try {
+        if (!movieId) {
+          return
+        }
+        api.fetchDetailsMovie(movieId).then(data => setMovie(data));
+      } catch (error) {
+        toast.error(error.message);
+      }
+        })();
     }, [movieId]);
   
   const GoBack = () => {

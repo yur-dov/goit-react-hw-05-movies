@@ -13,7 +13,6 @@ const Movies = () => {
     const query = searchParams.get('query');
 
     useEffect(() => {
-        (() => {
             query &&
                 api.searchFilms(query).then(response => {
                     if (response.results.length === 0) {
@@ -21,7 +20,6 @@ const Movies = () => {
                     }
                     setFilms(response.results);
                 });
-        })();
     },[query]);
 
     const handleChange = event => {

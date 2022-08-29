@@ -7,12 +7,8 @@ const Home = () => {
   const [movies, setMovie] = useState([]);
 
    useEffect(() => {
-    (() => {
       api.fetchTrendingMovie().then(response => {
-        setMovie(response.results);
-        
-      });
-    })();
+        setMovie(response.results)});
   }, []);
 
   return (
